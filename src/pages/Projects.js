@@ -1,11 +1,16 @@
 import React, { useState, useEffect } from 'react';
 
-// Updated ProjectCard component with more compact design
-const ProjectCard = ({ title, description, github, live, image, category }) => {
+// Updated ProjectCard component with development badge
+const ProjectCard = ({ title, description, github, live, image, category, isInDevelopment }) => {
   return (
     <div className="project-card">
       <div className="project-image-container">
         <img src={image} alt={title} className="project-image" />
+        {isInDevelopment && (
+          <div className="dev-badge">
+            <span>IN DEVELOPMENT</span>
+          </div>
+        )}
       </div>
       <div className="project-content">
         <h3 className="project-title">{title}</h3>
@@ -40,6 +45,7 @@ const ProjectCard = ({ title, description, github, live, image, category }) => {
           height: 100%;
           display: flex;
           flex-direction: column;
+          position: relative;
         }
         
         .project-card:hover {
@@ -62,6 +68,33 @@ const ProjectCard = ({ title, description, github, live, image, category }) => {
         
         .project-card:hover .project-image {
           transform: scale(1.05);
+        }
+        
+        .dev-badge {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          background-color: #f43f5e;
+          color: white;
+          padding: 4px 8px;
+          border-radius: 4px;
+          font-size: 0.6rem;
+          font-weight: bold;
+          text-transform: uppercase;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+          animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+          0% {
+            opacity: 1;
+          }
+          50% {
+            opacity: 0.7;
+          }
+          100% {
+            opacity: 1;
+          }
         }
         
         .project-content {
@@ -142,11 +175,12 @@ function Projects() {
   const projects = [
     {
       title: "STAYHUB",
-      description: "Full-stack project with student/admin portals, UPI payments, and complaint system. Built with React, Node.js, and MySQL(DEVELOPING STAGE).",
+      description: "Full-stack project with student/admin portals, UPI payments, and complaint system. Built with React, Node.js, and MySQL.",
       github: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745776558/aa_hjtvst.png",
       live: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745775629/sss_ctmrxu.png",
       image: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745604009/Screenshot_2025-04-25_232847_jedaun.png",
-      category: "fullstack"
+      category: "fullstack",
+      isInDevelopment: true
     },
     {
       title: "Kitchen Canvas",
@@ -154,7 +188,8 @@ function Projects() {
       github: "https://github.com/manideepak12/Kitchen-Canvas",
       live: "https://kitchen-canvas.vercel.app/",
       image: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745565768/Screenshot_2025-04-25_125232_cje8pe.png",
-      category: "frontend"
+      category: "frontend",
+      isInDevelopment: false
     },
     {
       title: "Story Cafe Website",
@@ -162,14 +197,16 @@ function Projects() {
       github: "https://github.com/manideepak12/STORY-CAFE-WEBSITE",
       live: "https://manideepak12.github.io/STORY-CAFE-WEBSITE/",
       image: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745565865/Screenshot_2025-04-25_125359_sor79k.png",
-      category: "frontend"
+      category: "frontend",
+      isInDevelopment: false
     },
     {
       title: "Alcohol Detection System",
       description: "Alcohol Detection and Engine Locking System is an innovative and crucial project developed as part of a diploma final year major project. This system addresses the critical issue of drunk driving by integrating advanced sensor technology with the widely-used Arduino Uno microcontroller.",
       github: "https://github.com/manideepak12/ALCOHOL-DETECTION-AND-ENGINE-LOCKING-SYSTEM",
       image: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745567093/20230403_095836_2_sxchmx.jpg",
-      category: "hardware"
+      category: "hardware",
+      isInDevelopment: false
     },
   ];
 
