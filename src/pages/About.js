@@ -147,7 +147,7 @@ function About() {
     {
       platform: "LinkedIn",
       username: "manideepak-reddy",
-      url: "https://linkedin.com/in/manideepak-reddy",
+      url: "https://www.linkedin.com/in/manideepak-reddy-bodigam-/",
       imageUrl: "https://emedia1.nhs.wales/NWISWalesNHSUK/cache/file/7D9A4551-7B2A-4C24-8EBAC4ACC870AFE0_medium.png"
     },
     {
