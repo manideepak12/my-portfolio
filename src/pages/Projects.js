@@ -143,8 +143,8 @@ function Projects() {
     {
       title: "STAYHUB",
       description: "Full-stack project with student/admin portals, UPI payments, and complaint system. Built with React, Node.js, and MySQL(DEVELOPING STAGE).",
-      github: "https://github.com/yourusername/hostel-management",
-      live: "https://kitchen-canvas.vercel.app/",
+      github: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745776558/aa_hjtvst.png",
+      live: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745775629/sss_ctmrxu.png",
       image: "https://res.cloudinary.com/duhabjmtf/image/upload/v1745604009/Screenshot_2025-04-25_232847_jedaun.png",
       category: "fullstack"
     },
